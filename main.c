@@ -2,6 +2,6 @@
 
 int main(void)
 {
-_printf("Hello\\nWorld!");
+_printf("Hello\nWo%%ld!\n");
 return (0);
 }
