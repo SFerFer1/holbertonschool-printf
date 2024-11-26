@@ -2,6 +2,7 @@
 
 int main(void)
 {
-_printf("Hello\nWo%%ld!\n");
+char z = 'a';
+_printf("H%cllo\nWo%%ld!\n", z);
 return (0);
 }

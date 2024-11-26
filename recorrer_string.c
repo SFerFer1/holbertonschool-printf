@@ -10,12 +10,8 @@
 void recorrer_string(const char *str , va_list parametros)
 {
 	char c;
-	char *s;
-	va_list args;
-	va_start(parametro , str);
-	c = (char) va_arg(parametros, int);
 	
-
+	
 	while (*str != '\0')
 	{
 		if (*str == '\\' && *(str + 1) == 'n')
@@ -43,5 +39,5 @@ void recorrer_string(const char *str , va_list parametros)
 		str++;
 	}
 	
-	va_end(parametros);
+	
 }
