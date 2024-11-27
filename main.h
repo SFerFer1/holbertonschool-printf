@@ -6,5 +6,6 @@
 #define MAIN_H
 int _printf(const char *format, ...);
 int recorrer_string(const char *str , va_list parametros);
+int manejar_c_s(char definidor, va_list parametros, int *contador);
 #endif /* MAIN_H */
 
