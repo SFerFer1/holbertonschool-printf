@@ -26,6 +26,9 @@ int contador = 0;
 		manejar_c_s(*(str + 1), parametros, &contador);
 		str++;
 		break;
+		case 'i':
+                case 'd':
+
 		default:
 		write(1, str, 1);
 		contador++;
@@ -39,9 +42,6 @@ int contador = 0;
 	}
 	str++;
 	}
-
-
-
 return (contador);
 }
 
