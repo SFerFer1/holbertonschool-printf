@@ -5,9 +5,9 @@ int main(void)
 int contador;
     char z = 'a';
     char *str = "Holberton";
+int j = 22;
 
-
-contador = _printf("Prueba con %d, %i\n", 42, -42);
+contador = _printf("H%illo\n", j);
 printf("Cantidad de caracteres impresos: %i\n", contador);
 
     contador = _printf("Hello\n", z);
@@ -24,7 +24,6 @@ printf("Cantidad de caracteres impresos: %i\n", contador);
 
 contador = _printf("%c  a ", z);
     printf("Cantidad de caracteres impresos: %i\n", contador);
-
 
 
 return (0);

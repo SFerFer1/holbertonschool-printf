@@ -10,17 +10,16 @@ int manejar_casos_i_d(va_list parametros, int *contador)
 int n = va_arg(parametros, int);
 int cantchar = contar_digitos(n);
 int  i = cantchar - 1;
-char *numero = crear_espacio(n, cantchar);
+char *numero = malloc(cantchar + 1);
 
 if (numero == NULL)
 return -1;
 
-if (n == INT_MIN)
+if (n < 0)
 {
-n = 214748364;
-}
-else if (n < 0)
+numero[0] = '-';
 n = -n;
+}
 
  while (n > 0)
 {
@@ -29,8 +28,10 @@ n = -n;
 	i--;
 }
 
-if (n == 0 && numero[0] != '-')
+/*if (n == 0 && numero[0] != '-')
+{
 numero[i] = '0';
+}*/
 
 write(1, numero, cantchar);
 
@@ -42,23 +43,23 @@ return (0);
 int contar_digitos(int num)
 {
 int contador = 0;
+int vi = num;
 
-
-if (num == 0)
+if (vi == 0)
 {
 return (1);
 }
 
 
-if (num < 0)
+if (vi < 0)
 {
-num = -num;
+vi = -vi;
 }
 
 
-while (num > 0)
+while (vi > 0)
 {
-	num /= 10; 
+	vi /= 10; 
 	contador++;  
 }
 return (contador);
@@ -68,29 +69,14 @@ char *crear_espacio(int numero, int cantchar)
 {
 char *num;
 
-if (numero < 0 && numero != INT_MIN)
-{
-num = malloc(cantchar + 2);
-if (num == NULL)
-return NULL;
-num[0] = '-';
-}
+if (numero > 2)
+numero++;
 
-else if (numero == INT_MIN)
-{
+
 num = malloc(cantchar + 1);
 if (num == NULL)
 return NULL;
-num[0] = '-';
-num[1] = '2';
-numero = 214748364;
-}
-else
-{
-num = malloc(cantchar + 1);
-if (num == NULL)
-return NULL;
-}
+
 
 return (num);
 }
