@@ -10,15 +10,25 @@ int manejar_casos_i_d(va_list parametros, int *contador)
 int n = va_arg(parametros, int);
 int cantchar = contar_digitos(n);
 int  i = cantchar - 1;
-char *numero = malloc(cantchar + 1);
+char *numero = crear_espacio(n,cantchar);
 
 if (numero == NULL)
 return -1;
+
 
 if (n < 0)
 {
 numero[0] = '-';
 n = -n;
+}
+
+if (n == 0)
+{
+numero[0] = '0';
+write(1, numero, 1);
+*contador += 1;
+free(numero);
+return 0;
 }
 
  while (n > 0)
@@ -27,11 +37,6 @@ n = -n;
 	n /= 10;
 	i--;
 }
-
-/*if (n == 0 && numero[0] != '-')
-{
-numero[i] = '0';
-}*/
 
 write(1, numero, cantchar);
 
@@ -54,6 +59,7 @@ return (1);
 if (vi < 0)
 {
 vi = -vi;
+contador++;
 }
 
 
@@ -69,14 +75,16 @@ char *crear_espacio(int numero, int cantchar)
 {
 char *num;
 
-if (numero > 2)
-numero++;
-
-
+if (numero >= 0)
+{
 num = malloc(cantchar + 1);
 if (num == NULL)
 return NULL;
-
+}
+else
+{
+num = malloc(cantchar + 2);
+}
 
 return (num);
 }
