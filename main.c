@@ -6,7 +6,10 @@ int contador;
     char z = 'a';
     char *str = "Holberton";
 
-  
+
+contador = _printf("Prueba con %d, %i\n", 42, -42);
+printf("Cantidad de caracteres impresos: %i\n", contador);
+
     contador = _printf("Hello\n", z);
     printf("Cantidad de caracteres impresos: %i\n", contador);
 

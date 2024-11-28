@@ -28,7 +28,9 @@ int contador = 0;
 		break;
 		case 'i':
                 case 'd':
-
+		manejar_casos_i_d(parametros, &contador);
+		str++;
+		break;
 		default:
 		write(1, str, 1);
 		contador++;
@@ -44,5 +46,3 @@ int contador = 0;
 	}
 return (contador);
 }
-
-
