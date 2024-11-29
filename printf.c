@@ -5,8 +5,15 @@ va_list words;
 int contador;
 
 va_start(words, format);
-if (format == NULL || *format == '\0')
-return (0);
+
+
+
+if (format == NULL)
+{
+write(1, "(null)", 6);
+return(6);
+}
+
 
 contador = recorrer_string(format, words);
 

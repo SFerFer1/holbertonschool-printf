@@ -19,14 +19,23 @@ switch (definidor)
 	break;
 	case 's':
 	string = va_arg(parametros, char *);
+if (string == NULL)
+{
+write(1, "(null)", 6);
+(*contador) +=6;
+}
+	else
+	{
 		while (*string != '\0')
 		{
 		write(1, string, 1);
 		(*contador)++;
 		string++;
 		}
-	break;
-}
+	}
 
+	break;
+
+}
 return (0);
 }
