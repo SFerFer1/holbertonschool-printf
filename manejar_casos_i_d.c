@@ -14,14 +14,16 @@ char *numero = crear_espacio(n,cantchar);
 
 if (numero == NULL)
 return -1;
-
-
 if (n < 0)
 {
 numero[0] = '-';
 n = -n;
 }
-
+if (n == -2147483648)
+{
+write(1, "-2147483648", 11);
+*contador += 11;
+}
 if (n == 0)
 {
 numero[0] = '0';
@@ -30,16 +32,13 @@ write(1, numero, 1);
 free(numero);
 return 0;
 }
-
  while (n > 0)
 {
 	numero[i] = (n % 10) + '0';
 	n /= 10;
 	i--;
 }
-
 write(1, numero, cantchar);
-
 free(numero);
 *contador += cantchar;
 return (0);
