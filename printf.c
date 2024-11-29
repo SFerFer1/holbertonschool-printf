@@ -10,10 +10,9 @@ va_start(words, format);
 
 if (format == NULL)
 {
-return(0);
+contador = 0;
 }
-
-
+else
 contador = recorrer_string(format, words);
 
 
