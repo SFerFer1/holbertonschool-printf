@@ -10,8 +10,7 @@ va_start(words, format);
 
 if (format == NULL)
 {
-write(1, "(null)", 6);
-return(6);
+return(0);
 }
 
 

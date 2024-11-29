@@ -8,6 +8,10 @@ char *str = "Holberton";
 int j = 42;
 int k = -99;
 
+_printf(NULL);
+
+
+
 contador = _printf("El valor de j es: %i\n", j);
     printf("Cantidad de caracteres impresos: %i\n", contador);
 
