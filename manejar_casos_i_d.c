@@ -14,15 +14,17 @@ char *numero = crear_espacio(n,cantchar);
 
 if (numero == NULL)
 return -1;
-if (n < 0)
+if (n < 0 && n != -2147483648)
 {
 numero[0] = '-';
 n = -n;
 }
-if (n == -2147483648)
+if (n == INT_MIN)
 {
+free(numero);
 write(1, "-2147483648", 11);
 *contador += 11;
+return(0);
 }
 if (n == 0)
 {
