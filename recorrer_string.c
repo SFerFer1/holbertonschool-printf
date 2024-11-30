@@ -1,9 +1,12 @@
 #include "main.h"
 #include <stdarg.h>
 /**
- * _printf - Funcion que simula printf
- * @format: Cadena que contiene los especificadores de formato
- * Return: Nada
+ * recorrer_string - A function that receives a string and a
+ *                  va_list and calls functions that print.
+ * @str: The format string to process.
+ * @parametros: The list of arguments to be printed, passed by reference.
+ *
+ * Return: The number of characters printed.
  */
 int recorrer_string(const char *str, va_list parametros)
 {
@@ -13,7 +16,8 @@ int contador = 0;
 	{
 		if (*str == '\\' && *(str + 1) == 'n')
 		{
-			write(1, "\n", 1);	
+
+			write(1, "\n", 1);
 			str++;
 		}
 	if (*str == '%')
@@ -27,7 +31,7 @@ int contador = 0;
 		str++;
 		break;
 		case 'i':
-                case 'd':
+		case 'd':
 		manejar_casos_i_d(parametros, &contador);
 		str++;
 		break;

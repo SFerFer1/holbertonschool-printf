@@ -1,6 +1,14 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+/**
+ * manejar_c_s - The function that handles the '%c' , '%s' and '%%'.
+ * @definidor: The character that can be s, c or %.
+ * @parametros: The list of arguments .
+ * @contador: A pointer to the integer contador.
+ *
+ * Return: Always returns 0.
+ */
 int manejar_c_s(char definidor, va_list parametros, int *contador)
 {
 char c;
@@ -22,7 +30,7 @@ switch (definidor)
 if (string == NULL)
 {
 write(1, "(null)", 6);
-(*contador) +=6;
+(*contador) += 6;
 }
 	else
 	{
