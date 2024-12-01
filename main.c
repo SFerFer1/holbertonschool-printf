@@ -9,11 +9,10 @@
  */
 int main(void)
 {
-int p;
 
-p = _printf(NULL);
-printf("%i", p);
 
+_printf("%");
+printf("%");
 
 return (0);
 }

@@ -11,8 +11,16 @@ va_list words;
 int con = 0;
 va_start(words, format);
 
-con = recorrer_string(format, words);
 
+if (format[0] == '%' && format[1] == '\0')
+{
+write(1, "", 1);
+con = 0;
+}
+else
+{
+con = recorrer_string(format, words);
+}
 
 va_end(words);
 return (con);
