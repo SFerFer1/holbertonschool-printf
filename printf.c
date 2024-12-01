@@ -9,15 +9,13 @@ int _printf(const char *format, ...)
 {
 va_list words;
 int con;
-
-va_start(words, format);
 if (format == NULL)
 {
 write(1, "", 1);
 con = -1;
 return (con);
 }
-else if (format[0] == '%')
+else if (format[0] == '%' && format[1] == '\0')
 {
 write(1, "%", 1);
 con = 1;
