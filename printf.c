@@ -9,17 +9,9 @@ int _printf(const char *format, ...)
 {
 va_list words;
 int con;
-if (format == NULL)
-{
-write(1, "", 1);
-con = -1;
-return (con);
-}
-else
-{
+
 con = recorrer_string(format, words);
 return (con);
-}
 
 va_end(words);
 return (0);
