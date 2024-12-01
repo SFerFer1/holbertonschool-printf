@@ -15,12 +15,6 @@ write(1, "", 1);
 con = -1;
 return (con);
 }
-else if (format[0] == '%' && format[1] == '\0')
-{
-write(1, "%", 1);
-con = 1;
-return (con);
-}
 else
 {
 con = recorrer_string(format, words);
