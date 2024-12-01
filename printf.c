@@ -8,11 +8,12 @@
 int _printf(const char *format, ...)
 {
 va_list words;
-int con;
+int con = 0;
+va_start(words, format);
 
 con = recorrer_string(format, words);
-return (con);
+
 
 va_end(words);
-return (0);
+return (con);
 }
