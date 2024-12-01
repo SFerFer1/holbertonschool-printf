@@ -11,12 +11,16 @@ va_list words;
 int con;
 
 va_start(words, format);
-
-
-
 if (format == NULL)
 {
-con = 0;
+write(1, "", 1);
+con = -1;
+return (con);
+}
+else if (format[0] == '%')
+{
+write(1, "%", 1);
+con = 1;
 return (con);
 }
 else
@@ -26,5 +30,5 @@ return (con);
 }
 
 va_end(words);
-return (con);
+return (0);
 }

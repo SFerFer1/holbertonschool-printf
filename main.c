@@ -9,12 +9,11 @@
  */
 int main(void)
 {
-_printf(NULL);
+int p;
 
-_printf("%d", INT_MIN);
-_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
-_printf("%i", INT_MIN);
-_printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+p = _printf(NULL);
+printf("%i", p);
+
 
 return (0);
 }
