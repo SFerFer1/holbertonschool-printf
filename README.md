@@ -142,8 +142,6 @@ Resultado esperado:
 0
 Caracteres impresos: 2
 
-Instalación
-
 
 Diagrama de flujo del proyecto:
 
