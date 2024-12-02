@@ -66,3 +66,9 @@ Requirements:
 - Variadic functions
 
 
+Diagrama de flujo del proyecto:
+
+![Flowchart](https://github.com/SFerFer1/holbertonschool-printf/blob/main/Flowchart%20printf.png)
+
+
+
